@@ -1,8 +1,10 @@
 import sys
 import os
 import requests
+from bs4 import BeautifulSoup
 
 browser_history = []
+tags = ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'a', 'ul', 'ol', 'li', 'title']
 
 # function to read the contents of the web page
 def read_contents(page_url):
@@ -19,8 +21,8 @@ def read_contents(page_url):
 def write_contents(page_file, source):
     file_path = os.path.join(dir_path, page_file)
     web_page = open(file_path, 'w')
-    for row in source.split('\n'):
-        web_page.write(row + '\n')
+    for item in source:
+        web_page.write(item.get_text())
     web_page.close()
 
 
@@ -36,17 +38,23 @@ def save_page(url):
     if 'https://' not in url:
         url = 'https://' + url
 
-    page_source = request_html(url)
+    # GET response from the url
+    response = request_html(url)
+
+    # Use Beautiful Soup 4 to parse HTML
+    soup = BeautifulSoup(response.content, 'html.parser')
+    result = soup.find_all(tags)  # finding all instances of the specified tags
 
     # open the page in write mode at the specified path and write it's contents
-    write_contents(file_name, page_source)
+    write_contents(file_name, result)
 
     # append current page to browser history
     browser_history.append(file_name)
 
-    # print the source html of the page
-    for line in page_source.split('\n'):
-        print(line)
+    # print the clean result using bs4
+    for item in result:
+        print(item.get_text())
+
 
 
 # function to mimic the 'back' button of a browser
@@ -63,8 +71,7 @@ def go_back():
 
 # function to request the source HTML of a requested URL
 def request_html(url):
-    response = requests.get(url)
-    return response.text
+    return requests.get(url)
 
 
 # ------------------ main program execution starts here ---------------------------
@@ -76,14 +83,14 @@ dir_path = root_dir + '/' + dir_name
 if not os.path.exists(dir_path) :  # if only the directory doesn't exist already
     os.mkdir(dir_name)
 
-while True :
+while True:
     command = input()
     if '.' in command:
         save_page(command)
     elif command == 'back':
         go_back()
-    else :
+    else:
         if command == 'exit':
             break
-        else :
+        else:
             read_contents(command)
