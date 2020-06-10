@@ -2,6 +2,7 @@ import sys
 import os
 import requests
 from bs4 import BeautifulSoup
+from colorama import Fore
 
 browser_history = []
 tags = ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'a', 'ul', 'ol', 'li', 'title']
@@ -22,28 +23,26 @@ def write_contents(page_file, source):
     file_path = os.path.join(dir_path, page_file)
     web_page = open(file_path, 'w')
     for item in source:
-        web_page.write(item.get_text())
+        format = f'{Fore.BLUE}' if item.name == 'a' else f'{Fore.RESET}'
+        text = format + item.get_text()
+        web_page.write(text)
     web_page.close()
 
 
 # function to save a webpage to a directory in a file
 def save_page(url):
     split_url = url.split('.')
-    if len(split_url) > 2:
+    if len(split_url) > 2:  # e.g. docs.python.org
         file_name = '.'.join(split_url[: -1])
-    else:
+    else:  # nytimes.com
         file_name = split_url[0]
-    print(file_name)
 
     if 'https://' not in url:
         url = 'https://' + url
 
-    # GET response from the url
     response = request_html(url)
-
-    # Use Beautiful Soup 4 to parse HTML
     soup = BeautifulSoup(response.content, 'html.parser')
-    result = soup.find_all(tags)  # finding all instances of the specified tags
+    result = soup.find_all(tags)
 
     # open the page in write mode at the specified path and write it's contents
     write_contents(file_name, result)
@@ -51,9 +50,11 @@ def save_page(url):
     # append current page to browser history
     browser_history.append(file_name)
 
-    # print the clean result using bs4
-    for item in result:
-        print(item.get_text())
+    # print the source html of the page using bs4
+    for tag in result:
+        format = f'{Fore.BLUE}' if tag.name == 'a' else f'{Fore.RESET}'
+        text = format + tag.get_text()
+        print(text)
 
 
 

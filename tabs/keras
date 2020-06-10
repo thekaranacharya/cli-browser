@@ -1,0 +1,83 @@
+[39mKeras API reference[34m[34mAbout Keras[34mGetting started[34mDeveloper guides[34mKeras API reference[34mModels API[34mLayers API[34mCallbacks API[34mData preprocessing[34mOptimizers[34mMetrics[34mLosses[34mBuilt-in small datasets[34mKeras Applications[34mUtilities[34mCode examples[34mWhy choose Keras?[34mCommunity & governance[34mContributing to Keras[39msearch[39mKeras API reference[39mModels API[34mModels API[39m
+The Model class
+The Sequential class
+Model training APIs
+Model saving & serialization APIs
+[39mThe Model class[34mThe Model class[39mThe Sequential class[34mThe Sequential class[39mModel training APIs[34mModel training APIs[39mModel saving & serialization APIs[34mModel saving & serialization APIs[39mLayers API[34mLayers API[39m
+The base Layer class
+Layer activations
+Layer weight initializers
+Layer weight regularizers
+Layer weight constraints
+Core layers
+Convolution layers
+Pooling layers
+Recurrent layers
+Preprocessing layers
+Normalization layers
+Regularization layers
+Attention layers
+Reshaping layers
+Merging layers
+Locally-connected layers
+Activation layers
+[39mThe base Layer class[34mThe base Layer class[39mLayer activations[34mLayer activations[39mLayer weight initializers[34mLayer weight initializers[39mLayer weight regularizers[34mLayer weight regularizers[39mLayer weight constraints[34mLayer weight constraints[39mCore layers[34mCore layers[39mConvolution layers[34mConvolution layers[39mPooling layers[34mPooling layers[39mRecurrent layers[34mRecurrent layers[39mPreprocessing layers[34mPreprocessing layers[39mNormalization layers[34mNormalization layers[39mRegularization layers[34mRegularization layers[39mAttention layers[34mAttention layers[39mReshaping layers[34mReshaping layers[39mMerging layers[34mMerging layers[39mLocally-connected layers[34mLocally-connected layers[39mActivation layers[34mActivation layers[39mCallbacks API[34mCallbacks API[39m
+Base Callback class
+ModelCheckpoint
+TensorBoard
+EarlyStopping
+LearningRateScheduler
+ReduceLROnPlateau
+RemoteMonitor
+LambdaCallback
+TerminateOnNaN
+CSVLogger
+ProgbarLogger
+[39mBase Callback class[34mBase Callback class[39mModelCheckpoint[34mModelCheckpoint[39mTensorBoard[34mTensorBoard[39mEarlyStopping[34mEarlyStopping[39mLearningRateScheduler[34mLearningRateScheduler[39mReduceLROnPlateau[34mReduceLROnPlateau[39mRemoteMonitor[34mRemoteMonitor[39mLambdaCallback[34mLambdaCallback[39mTerminateOnNaN[34mTerminateOnNaN[39mCSVLogger[34mCSVLogger[39mProgbarLogger[34mProgbarLogger[39mData preprocessing[34mData preprocessing[39m
+Image data preprocessing
+Timeseries data preprocessing
+Text data preprocessing
+[39mImage data preprocessing[34mImage data preprocessing[39mTimeseries data preprocessing[34mTimeseries data preprocessing[39mText data preprocessing[34mText data preprocessing[39mOptimizers[34mOptimizers[39m
+SGD
+RMSprop
+Adam
+Adadelta
+Adagrad
+Adamax
+Nadam
+Ftrl
+[39mSGD[34mSGD[39mRMSprop[34mRMSprop[39mAdam[34mAdam[39mAdadelta[34mAdadelta[39mAdagrad[34mAdagrad[39mAdamax[34mAdamax[39mNadam[34mNadam[39mFtrl[34mFtrl[39mMetrics[34mMetrics[39m
+Accuracy metrics
+Probabilistic metrics
+Regression metrics
+Classification metrics based on True/False positives & negatives
+Image segmentation metrics
+Hinge metrics for "maximum-margin" classification
+[39mAccuracy metrics[34mAccuracy metrics[39mProbabilistic metrics[34mProbabilistic metrics[39mRegression metrics[34mRegression metrics[39mClassification metrics based on True/False positives & negatives[34mClassification metrics based on True/False positives & negatives[39mImage segmentation metrics[34mImage segmentation metrics[39mHinge metrics for "maximum-margin" classification[34mHinge metrics for "maximum-margin" classification[39mLosses[34mLosses[39m
+Probabilistic losses
+Regression losses
+Hinge losses for "maximum-margin" classification
+[39mProbabilistic losses[34mProbabilistic losses[39mRegression losses[34mRegression losses[39mHinge losses for "maximum-margin" classification[34mHinge losses for "maximum-margin" classification[39mBuilt-in small datasets[34mBuilt-in small datasets[39m
+MNIST digits classification dataset
+CIFAR10 small images classification dataset
+CIFAR100 small images classification dataset
+IMDB movie review sentiment classification dataset
+Reuters newswire classification dataset
+Fashion MNIST dataset, an alternative to MNIST
+Boston Housing price regression dataset
+[39mMNIST digits classification dataset[34mMNIST digits classification dataset[39mCIFAR10 small images classification dataset[34mCIFAR10 small images classification dataset[39mCIFAR100 small images classification dataset[34mCIFAR100 small images classification dataset[39mIMDB movie review sentiment classification dataset[34mIMDB movie review sentiment classification dataset[39mReuters newswire classification dataset[34mReuters newswire classification dataset[39mFashion MNIST dataset, an alternative to MNIST[34mFashion MNIST dataset, an alternative to MNIST[39mBoston Housing price regression dataset[34mBoston Housing price regression dataset[39mKeras Applications[34mKeras Applications[39m
+Xception
+EfficientNet B0 to B7
+VGG16 and VGG19
+ResNet and ResNetV2
+MobileNet and MobileNetV2
+DenseNet
+NasNetLarge and NasNetMobile
+InceptionV3
+InceptionResNetV2
+[39mXception[34mXception[39mEfficientNet B0 to B7[34mEfficientNet B0 to B7[39mVGG16 and VGG19[34mVGG16 and VGG19[39mResNet and ResNetV2[34mResNet and ResNetV2[39mMobileNet and MobileNetV2[34mMobileNet and MobileNetV2[39mDenseNet[34mDenseNet[39mNasNetLarge and NasNetMobile[34mNasNetLarge and NasNetMobile[39mInceptionV3[34mInceptionV3[39mInceptionResNetV2[34mInceptionResNetV2[39mUtilities[34mUtilities[39m
+Model plotting utilities
+Serialization utilities
+Python & NumPy utilities
+Backend utilities
+[39mModel plotting utilities[34mModel plotting utilities[39mSerialization utilities[34mSerialization utilities[39mPython & NumPy utilities[34mPython & NumPy utilities[39mBackend utilities[34mBackend utilities[34mKeras API reference[34mModels API[34mLayers API[34mCallbacks API[34mData preprocessing[34mOptimizers[34mMetrics[34mLosses[34mBuilt-in small datasets[34mKeras Applications[34mUtilities
